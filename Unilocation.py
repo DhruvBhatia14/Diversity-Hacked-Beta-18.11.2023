@@ -206,7 +206,7 @@ class Location:
         curr_major = self.majors[0]
         current_locpref = self.locpref[0]
         for university in self.universities:
-            #make a def function that will take in the university, major and location and check if loactaion and major is/return True or False
+            within_distance = val3_uni(university,current_locpref,curr_major)
             within_distnace = True
             if within_distnace:
                 self.distance_cleared_university.append(university)
@@ -214,6 +214,21 @@ class Location:
                 continue
         
         return self.distance_cleared_university
+
+    def val3_uni(self,university,current_locpref,curr_major):
+        TFloc = False
+        TFmaj = False
+        if current_locpref in self.universities_locations[university]:
+            TFloc = True
+        if curr_major in self.universities_major[university]:
+            TFmaj = True
+        if TFloc and TFmaj:
+            return True
+        else:
+            return False
+
+            
+
 
 x = Location(["eng", "ed", "nurs"])
 x.locquestions()
