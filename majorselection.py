@@ -82,7 +82,6 @@ ordered_questions_chars ={
     "Do you enjoy collaborating in a team?": ["teamwork"],
     "Are you good at making decisions?": ["decision-making"],
     "Do you manage your time effectively?": ["time management"],
-    "Do you enjoy leadership roles and leading others?": ["leadership"],
     "Are you patient and empathetic?": ["empathy", "patience"],
     "Do you have a creative mindset?": ["creativity"],
     "Are you interested in legal studies or law-related topics?": ["law"],
@@ -96,6 +95,23 @@ ordered_questions_chars ={
     "Are you interested in geography and tourism?": ["geography", "tourism"],
     "Do you have an interest in energy and the environment?": ["energy", "environmental science"],
     "Do you have a general interest in various subjects?": ["general studies"],
+    "Are you interested in studying and understanding economic principles?": ["economics", "business studies"],
+    "Do you have a knack for understanding and interpreting laws and regulations?": ["law", "analytical skills"],
+    "Do you enjoy exploring and experimenting with scientific concepts?": ["physics", "chemistry", "biology", "analytical skills"],
+    "Are you passionate about promoting environmental sustainability?": ["environmental science", "sustainability"],
+    "Would you like to work on projects that involve creative expression and artistic skills?": ["art", "creativity"],
+    "Do you find joy in coordinating and managing various aspects of projects?": ["organization", "time management"],
+    "Are you interested in exploring and understanding different cultures and societies?": ["social studies", "multiculturalism"],
+    "Do you see yourself excelling in roles that involve leadership and decision-making?": ["leadership", "decision-making"],
+    "Would you enjoy working on projects related to technology and innovation?": ["technology", "innovation"],
+    "Are you passionate about health and well-being, with an interest in biology and chemistry?": ["healthcare", "biology", "chemistry"],
+    "Do you find satisfaction in problem-solving and attention to detail?": ["problem-solving", "attention to detail"],
+    "Are you interested in the world of business and its various aspects?": ["business studies", "management"],
+    "Do you enjoy creative pursuits in the realm of arts and design?": ["art", "design", "creativity"],
+    "Are you fascinated by the natural world and interested in environmental issues?": ["environmental science", "biology"],
+    "Do you have a strong interest in the performing arts, including music, drama, and theater?": ["arts", "performing arts"],
+    "Are you interested in languages, linguistics, or cultural proficiency?": ["languages", "cultural proficiency"],
+    "Do you enjoy teamwork and collaboration in various projects?": ["teamwork", "collaboration"],
     }
 
 def ask_question(question, characteristics):
@@ -116,9 +132,10 @@ def major_select():
                        "music", "drama", "gym"]
     print(school_subjects)
     user_input = set(input("Enter your preferred school subjects (separated by commas): ").strip().lower().split(','))
+    user_subjects = [subject.strip() for subject in user_input]
     
     for major, subjects in list_of_majors.items():
-        if any(subject in user_input for subject in map(str.lower, subjects)):
+        if any(subject in user_subjects for subject in map(str.lower, subjects)):
             print(f"Your selected subjects match the characteristics of {major}.")
             counter[major] += 1
     
@@ -126,6 +143,39 @@ def major_select():
 
     for major, total_count in counter.items():
         print(f"Total count for {major}: {total_count}")
+    
+        # Sort majors based on counts in descending order
+    sorted_majors = sorted(counter.items(), key=lambda x: x[1], reverse=True)
+
+    # Group majors with the same count
+    grouped_majors = {}
+    for major, count in sorted_majors:
+        if count not in grouped_majors:
+            grouped_majors[count] = []
+        grouped_majors[count].append(major)
+
+    ranked_majors = []
+    for count, majors in grouped_majors.items():
+        if len(majors) == 1:
+            ranked_majors.append(majors[0])
+        else:
+            # Ask the user to rank tied majors
+            print(f"\nRank the following majors based on your preference (1 = most preferred):")
+            for index, major in enumerate(majors, start=1):
+                print(f"{index}. {major}")
+            
+            # Get user input for rankings
+            ranking_input = input(f"Enter the rankings separated by commas: ")
+            ranking_list = [int(rank) for rank in ranking_input.split(',').strip()]
+
+            # Sort majors based on user rankings
+            ranked_majors.extend([majors[index - 1] for index in sorted(ranking_list)])
+
+    print("\nRanked Majors:")
+    for index, major in enumerate(ranked_majors, start=1):
+        print(f"{index}. {major}")
+    
+    return ranked_majors
     
 
 if __name__ == "__main__":
