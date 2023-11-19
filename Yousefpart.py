@@ -19,6 +19,74 @@ class Location:
         "Saskatchewan": ["Saskatoon", "Regina"],
         "Yukon": ["Whitehorse"]
         }
+        self.universities_locations = {
+        "University of Alberta": ['Edmonton, Alberta, Canada'],
+        "Alberta University of the Arts": ['Edmonton, Alberta, Canada'],
+        "Grant MacEwan University": ['Edmonton, Alberta, Canada'],
+        "Athabasca University": ['Athabasca, Alberta, Canada'],
+        "University of Calgary": ['Calgary, Alberta, Canada'],
+        "Mount Royal University": ['Calgary, Alberta, Canada'],
+        "University of Lethbridge": ['Lethbridge, Alberta, Canada'],
+        "University of British Columbia": ['Vancouver, British Columbia, Canada'],
+        "Capilano University": ['Vancouver, British Columbia, Canada'],
+        "Emily Carr University of Art and Design": ['Vancouver, British Columbia, Canada'],
+        "Simon Fraser University": ['Burnaby, British Columbia, Canada'],
+        "Kwantlen Polytechnic University": ['Surrey, British Columbia, Canada'],
+        "University of Victoria": ['Victoria, British Columbia, Canada'],
+        "Royal Roads University": ['Victoria, British Columbia, Canada'],
+        "University of Northern British Columbia": ['Prince George, British Columbia, Canada'],
+        "Thompson Rivers University": ['Kamloops, British Columbia, Canada'],
+        "Justice Institute of British Columbia": ['New Westminister, British Columbia, Canada'],
+        "Vancouver Island University": ['Nanaimo, British Columbia, Canada'],
+        "University of the Fraser Valley": ['Abbotsford, British Columbia, Canada'],
+        "University of Manitoba": ['Winnipeg, Manitoba, Canada'],
+        "University of Winnipeg": ['Winnipeg, Manitoba, Canada'],
+        "Université de Saint-Boniface": ['Winnipeg, Manitoba, Canada'],
+        "Brandon University": ['Brandon, Manitoba, Canada'],
+        "University of New Brunswick": ['Fredericton, New Brunswick, Canada'],
+        "St. Thomas University": ['Fredericton, New Brunswick, Canada'],
+        "Mount Allison University": ['Sackville, New Brunswick, Canada'],
+        "Université de Moncton": ['Moncton, New Brunswick, Canada'],
+        "Memorial University of Newfoundland": ["St. John's, Newfoundland and Labrador, Canada"],
+        "Dalhousie University": ['Halifax, Nova Scotia, Canada'],
+        "Saint Mary's University": ['Halifax, Nova Scotia, Canada'],
+        "University of King's College": ['Halifax, Nova Scotia, Canada'],
+        "Mount Saint Vincent University": ['Halifax, Nova Scotia, Canada'],
+        "NSCAD University": ['Halifax, Nova Scotia, Canada'],
+        "Acadia University": ['Wolfville, Nova Scotia, Canada'],
+        "Cape Breton University": ['Sydney, Nova Scotia, Canada'],
+        "St. Francis Xavier University": ['Antigonish, Nova Scotia, Canada'],
+        "University of Toronto": ['Toronto, Ontario, Canada'],
+        "York University": ['Toronto, Ontario, Canada'],
+        "Toronto Metropolitan University": ['Toronto, Ontario, Canada'],
+        "University of Ottawa": ['Ottawa, Ontario, Canada'],
+        "Carleton University": ['Ottawa, Ontario, Canada'],
+        "McMaster University": ['Hamilton, Ontario, Canada'],
+        "University of Waterloo": ['Waterloo, Ontario, Canada'],
+        "Wilfrid Laurier University": ['Waterloo, Ontario, Canada'],
+        "Western University": ['London, Ontario, Canada'],
+        "Queen's University": ['Kingston, Ontario, Canada'],
+        "University of Guelph": ['Guelph, Ontario, Canada'],
+        "Brock University": ['St. Catharines, Ontario, Canada'],
+        "Lakehead University": ['Thunder Bay, Ontario, Canada'],
+        "Trent University": ['Peterborough, Ontario, Canada'],
+        "Ontario Tech University": ['Oshawa, Ontario, Canada'],
+        "University of Windsor": ['Windsor, Ontario, Canada'],
+        "Algoma University": ['Sault Ste. Marie, Ontario, Canada'],
+        "Nipissing University": ['North Bay, Ontario, Canada'],
+        "Laurentian University": ['Sudbury, Ontario, Canada'],
+        "University of Prince Edward Island": ['Charlottetown, Prince Edward Island, Canada'],
+        "McGill University": ['Montreal, Quebec, Canada'],
+        "Université de Montréal": ['Montreal, Quebec, Canada'],
+        "Concordia University": ['Montreal, Quebec, Canada'],
+        "Université Laval": ['Quebec City, Quebec, Canada'],
+        "Bishop's University": ['Sherbrooke, Quebec, Canada'],
+        "University of Saskatchewan": ['Saskatoon, Saskatchewan, Canada'],
+        "University of Regina": ['Regina, Saskatchewan, Canada'],
+        "Yukon College": ['Whitehorse, Yukon, Canada']
+        }
+        #Make a dictionary that has keys of all the possible majors and values of true or false for weather the university has the major
+
         self.universities = [
         # Alberta
         "University of Alberta", "University of Calgary", "University of Lethbridge",
@@ -138,7 +206,7 @@ class Location:
         curr_major = self.majors[0]
         current_locpref = self.locpref[0]
         for university in self.universities:
-            #Ask chatgpt if the university is in the city it has the major and return True or false
+            #make a def function that will take in the university, major and location and check if loactaion and major is/return True or False
             within_distnace = True
             if within_distnace:
                 self.distance_cleared_university.append(university)
