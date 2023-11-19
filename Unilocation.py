@@ -156,7 +156,7 @@ class Location:
                 tag=False
             except AssertionError:
                 print("We do not have that in our database right now, please consider a new province.")
-        self.locpref.append(x)
+        #self.locpref.append(x)
         for items in self.provcitiesdic:
             if x == items:
                 y = self.provcitiesdic[items]
@@ -182,12 +182,13 @@ class Location:
             z = (input(s)).title()
             if z == "Yes":
                 tag = True
+                i=1
                 while tag:
                     try:
                         w = (input("Which other city in this province? ")).title()
                         assert (w in y)
                         if w not in self.locpref:
-                            self.locpref.insert(1,w)
+                            self.locpref.append(w)
                         elif w in self.locpref:
                             print("This city has alreayd been considered, try another or type No if you have included each city already.")
                             if len(self.locpref)==(len(y)+1):
@@ -199,6 +200,7 @@ class Location:
                         print("We do not have that in our database right now, please consider a new city.")
             if z == "No":
                 flag = False
+        self.locpref.append(x)
         print(self.locpref)    
 
     def University_check(self):
