@@ -24,7 +24,7 @@ def rank_majors(majors):
     while True:
         try:
             # Get user input for rankings
-            ranking_input = input(f"Enter the rankings separated by commas: (Least to Most)").strip()
+            ranking_input = input(f"Enter the rankings separated by commas (most preferred to least preferred): ").strip()
 
             # Check for leading and trailing spaces or invalid input format
             if ranking_input.startswith(",") or ranking_input.endswith(","):
@@ -39,9 +39,13 @@ def rank_majors(majors):
             if len(ranking_list) != len(majors) or any(rank <= 0 or rank > len(majors) for rank in ranking_list):
                 raise ValueError("Invalid ranking. Please enter numbers within the range.")
 
-            # Sort majors based on user rankings
-            ranked_majors = [majors[index - 1] for index in sorted(ranking_list)]
-            return ranked_majors
+            # Create a dictionary to map ranking positions to majors
+            ranked_dict = {index: majors[index - 1] for index in ranking_list}
+
+            # Sort the majors based on the user's rankings
+            majors_ranked = [ranked_dict[index] for index in range(1, len(majors) + 1)]
+            
+            return majors_ranked
 
         except ValueError as e:
             print(f"Error: {e}")
@@ -52,8 +56,18 @@ def major_select():
                        "physics", "chemistry", "biology", "home economics",
                        "music", "drama", "gym"]
     print("Available school subjects:", school_subjects)
-    user_input = set(input("Enter your preferred school subjects (separated by commas): ").strip().lower().split(','))
-    user_subjects = [subject.strip() for subject in user_input]
+
+    while True:
+        user_input = set(input("Enter your preferred school subjects (separated by commas): ").strip().lower().split(','))
+        user_subjects = [subject.strip() for subject in user_input]
+
+        # Check if all user-selected subjects are valid
+        if all(subject in school_subjects for subject in user_subjects):
+            break
+        else:
+            invalid_subjects = [subject for subject in user_subjects if subject not in school_subjects]
+            print(f"Invalid subjects: {', '.join(invalid_subjects)}. Please enter valid subjects such as:", school_subjects)
+    
 
     # Check if user-selected subjects match majors' characteristics and update counters
     for major, subjects in list_of_majors.items():
