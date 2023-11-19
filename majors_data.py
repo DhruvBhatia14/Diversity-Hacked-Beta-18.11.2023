@@ -113,3 +113,7 @@ ordered_questions_chars ={
     "Do you enjoy working with your hands and being physically active?": ["hands-on work", "physical activity"],
     "Do you pay attention to details and follow safety guidelines diligently?": ["attention to detail", "safety consciousness"],
     }
+
+school_subjects = ["mathematics", "social studies", 'english', 'art',
+                    "physics", "chemistry", "biology", "home economics",
+                    "music", "drama", "gym"]
