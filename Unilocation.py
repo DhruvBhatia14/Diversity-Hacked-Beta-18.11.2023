@@ -1,7 +1,9 @@
+from FatDict import *
 class Location:
     def __init__(self, majors_list):
         self.majors = majors_list 
         self.locpref = []
+        self.universities_major = returndict()
         self.province = ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Nova Scotia",
         "Nunavut","Ontario","Prince Edward Island","Quebec","Saskatchewan","Yukon"]
         self.provcitiesdic = {
@@ -207,8 +209,7 @@ class Location:
         current_locpref = self.locpref[0]
         for university in self.universities:
             within_distance = self.val3_uni(university,current_locpref,curr_major)
-            within_distnace = True
-            if within_distnace:
+            if within_distance:
                 self.distance_cleared_university.append(university)
             else:
                 continue
@@ -228,7 +229,7 @@ class Location:
             return False
 
 
-x = Location(["eng", "ed", "nurs"])
+x = Location(["Journalism and Mass Communication","Social Sciences","Sustainability Studies","Education","Tourism and Hospitality","Languages"])
 x.locquestions()
 y = x.University_check()
-print(len(y))
+print(y)
