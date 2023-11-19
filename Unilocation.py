@@ -206,7 +206,7 @@ class Location:
         curr_major = self.majors[0]
         current_locpref = self.locpref[0]
         for university in self.universities:
-            within_distance = val3_uni(university,current_locpref,curr_major)
+            within_distance = self.val3_uni(university,current_locpref,curr_major)
             within_distnace = True
             if within_distnace:
                 self.distance_cleared_university.append(university)
