@@ -137,7 +137,6 @@ class Location:
         # Territories
         "Yukon College"
         ]
-        print(len(self.universities))
     
     def userloc(self):
         self.loc = str(input("Where do you currently stay? "))
@@ -234,8 +233,8 @@ class Location:
     def bunmajor(self):
         self.majors.pop(0)
 
-
-x = Location(["Journalism and Mass Communication","Social Sciences","Sustainability Studies","Education","Tourism and Hospitality","Languages"])
-x.locquestions()
-y = x.University_check()
-print(y)
+if __name__ == "__main__":
+    x = Location(["Journalism and Mass Communication","Social Sciences","Sustainability Studies","Education","Tourism and Hospitality","Languages"])
+    x.locquestions()
+    y = x.University_check()
+    print(y)
