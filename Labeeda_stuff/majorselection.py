@@ -81,6 +81,11 @@ def major_select():
         if len(majors) == 1:
             ranked_majors.append(majors[0])
         else:
+            # Print the list of majors for ranking
+            print("\nList of majors to rank:")
+            for index, major in enumerate(majors, start=1):
+                print(f"{index}. {major}")
+
             # Ask the user to rank tied majors until valid input is provided
             while True:
                 try:
@@ -94,6 +99,7 @@ def major_select():
         print(f"{index}. {major}")
 
     return ranked_majors
+
 
 if __name__ == "__main__":
     major_select()
