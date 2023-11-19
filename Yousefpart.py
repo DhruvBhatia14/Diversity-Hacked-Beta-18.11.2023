@@ -2,22 +2,22 @@ class Location:
     def __init__(self, majors_list):
         self.majors = majors_list 
         self.locpref = []
-        self.province = ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Northwest Territories","Nova Scotia",
+        self.province = ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Nova Scotia",
         "Nunavut","Ontario","Prince Edward Island","Quebec","Saskatchewan","Yukon"]
         self.provcitiesdic = {
-        "Alberta": ["Calgary", "Edmonton", "Red Deer","Lethbridge"],
-        "British Columbia": ["Vancouver", "Victoria", "Surrey"],
-        "Manitoba": ["Winnipeg", "Brandon", "Thompson"],
-        "New Brunswick": ["Fredericton", "Saint John", "Moncton"],
-        "Newfoundland and Labrador": ["St. John's", "Mount Pearl", "Corner Brook"],
-        "Northwest Territories": ["Yellowknife", "Inuvik", "Hay River"],
-        "Nova Scotia": ["Halifax", "Dartmouth", "Sydney"],
+        "Alberta": ["Calgary", "Edmonton", "Athabasca","Lethbridge"],
+        "British Columbia": ["Vancouver","Burnaby","Prince George","Kamloops","New Westminister","Nanaimo","Abbotsford", "Victoria", "Surrey"],
+        "Manitoba": ["Winnipeg", "Brandon"],
+        "New Brunswick": ["Fredericton", "Sackville", "Moncton"],
+        "Newfoundland and Labrador": ["St. John's"],
+        "Nova Scotia": ["Halifax", "Wolfville","Antigonish", "Sydney"],
         "Nunavut": ["Iqaluit", "Rankin Inlet", "Arviat"],
-        "Ontario": ["Toronto", "Ottawa", "Mississauga", "Hamilton", "Waterloo"],
-        "Prince Edward Island": ["Charlottetown", "Summerside", "Stratford"],
-        "Quebec": ["Montreal", "Quebec City", "Laval"],
-        "Saskatchewan": ["Saskatoon", "Regina", "Prince Albert"],
-        "Yukon": ["Whitehorse", "Dawson City", "Watson Lake"]
+        "Ontario": ["Toronto", "Ottawa", "Hamilton", "Waterloo","London","Kingston","Guelph","St. Catharines","Thunder Bay", "Peterborough",
+        "Oshawa","Windsor","Sault Ste. Marie","North Bay","Sudbury"],
+        "Prince Edward Island": ["Charlottetown"],
+        "Quebec": ["Montreal", "Quebec City", "Sherbrooke"],
+        "Saskatchewan": ["Saskatoon", "Regina"],
+        "Yukon": ["Whitehorse"]
         }
         self.universities = [
         # Alberta
@@ -60,7 +60,6 @@ class Location:
         # Quebec
         "McGill University", "Université de Montréal", "Université Laval",
         "Concordia University", "Bishop's University",
-        "École Polytechnique",
 
         # Saskatchewan
         "University of Saskatchewan", "University of Regina",
@@ -118,7 +117,14 @@ class Location:
                     try:
                         w = (input("Which other city in this province? ")).title()
                         assert (w in y)
-                        self.locpref.insert(1,w)
+                        if w not in self.locpref:
+                            self.locpref.insert(1,w)
+                        elif w in self.locpref:
+                            print("This city has alreayd been considered, try another or type No if you have included each city already.")
+                            if len(self.locpref)==(len(y)+1):
+                                break
+                            else:
+                                continue
                         tag = False
                     except AssertionError:
                         print("We do not have that in our database right now, please consider a new city.")
