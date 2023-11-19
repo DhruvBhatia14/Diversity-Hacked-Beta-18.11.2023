@@ -1,0 +1,70 @@
+
+
+universities_in_provinces = {
+    # Alberta
+    "AB": [
+        "University of Alberta", "Alberta University of the Arts", "Grant MacEwan University",
+        "University of Calgary", "Mount Royal University", "University of Lethbridge", "Athabasca University"
+    ],
+
+    # British Columbia
+    "BC": [
+        "University of British Columbia", "Simon Fraser University", "University of Victoria",
+        "University of Northern British Columbia", "Thompson Rivers University", "Royal Roads University",
+        "Capilano University", "Emily Carr University of Art and Design", "Kwantlen Polytechnic University",
+        "Justice Institute of British Columbia", "Vancouver Island University", "University of the Fraser Valley"
+    ],
+
+    # Manitoba
+    "MB": [
+        "University of Manitoba", "University of Winnipeg", "Brandon University", "Université de Saint-Boniface"
+    ],
+
+    # New Brunswick
+    "NB": [
+        "University of New Brunswick", "Mount Allison University", "St. Thomas University", "Université de Moncton"
+    ],
+
+    # Newfoundland and Labrador
+    "NL": [
+        "Memorial University of Newfoundland"
+    ],
+
+    # Nova Scotia
+    "NS": [
+        "Dalhousie University", "Saint Mary's University", "Acadia University",
+        "University of King's College", "Cape Breton University", "Mount Saint Vincent University",
+        "St. Francis Xavier University", "NSCAD University"
+    ],
+
+    # Ontario
+    "ON": [
+        "University of Toronto", "University of Ottawa", "York University","Ryerson University",
+        "McMaster University", "University of Waterloo", "Western University",
+        "Queen's University", "Carleton University", "Toronto Metropolitan University",
+        "University of Guelph", "Brock University", "Wilfrid Laurier University",
+        "Lakehead University", "Trent University", "Ontario Tech University",
+        "University of Windsor", "Algoma University", "Nipissing University", "Laurentian University"
+    ],
+
+    # Prince Edward Island
+    "PEI": [
+        "University of Prince Edward Island"
+    ],
+
+    # Quebec
+    "QC": [
+        "McGill University", "Université de Montréal", "Université Laval",
+        "Concordia University", "Bishop's University"
+    ],
+
+    # Saskatchewan
+    "SK": [
+        "University of Saskatchewan", "University of Regina"
+    ],
+
+    # Territories
+    "YT": [
+        "Yukon College"
+    ]
+}
