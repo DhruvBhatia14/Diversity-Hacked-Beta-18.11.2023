@@ -227,6 +227,12 @@ class Location:
             return True
         else:
             return False
+    
+    def bunloc(self):
+        self.locpref.pop(0)
+    
+    def bunmajor(self):
+        self.majors.pop(0)
 
 
 x = Location(["Journalism and Mass Communication","Social Sciences","Sustainability Studies","Education","Tourism and Hospitality","Languages"])
