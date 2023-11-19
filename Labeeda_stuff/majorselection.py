@@ -24,7 +24,7 @@ def rank_majors(majors):
     while True:
         try:
             # Get user input for rankings
-            ranking_input = input(f"Enter the rankings separated by commas: ").strip()
+            ranking_input = input(f"Enter the rankings separated by commas: (Least to Most)").strip()
 
             # Check for leading and trailing spaces or invalid input format
             if ranking_input.startswith(",") or ranking_input.endswith(","):
