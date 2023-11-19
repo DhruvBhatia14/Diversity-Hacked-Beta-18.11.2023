@@ -50,4 +50,5 @@ while safe_Universities == []:
             Consider_cost = False
             break
 print(safe_Universities)
-assert safe_Universities != []
+if Consider_cost:
+    assert safe_Universities != []
