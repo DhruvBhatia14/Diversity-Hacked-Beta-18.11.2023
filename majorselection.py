@@ -68,9 +68,34 @@ counter = {
 
 
 ordered_questions_chars ={
-    "Do you enjoy teamwork? (yes/no/not sure): ": ["teamwork"],
-    "Do you enjoy holding leadership roles and leading people? (yes/no/not sure): ": ["leadership"],
-    "Would you consider yourself to be a creative and artistic person? (yes/no/not sure): ": ["creativity", "artistic"]
+    "Do you enjoy holding leadership roles and leading people?": ["leadership"],
+    "Would you consider yourself to be a creative and artistic person?": ["creativity", "artistic"],
+    "Do you enjoy problem-solving?": ["problem-solving"],
+    "Are you adaptable to new situations?": ["adaptability"],
+    "Do you have a keen attention to detail?": ["attention to detail"],
+    "Do you possess strong analytical skills?": ["analytical skills"],
+    "Are you disciplined and well-organized?": ["discipline"],
+    "Do you enjoy conducting research?": ["research"],
+    "Do you have good customer service skills?": ["customer service"],
+    "Are you multilingual or interested in language courses?": ["multilingualism"],
+    "Are you environmentally aware?": ["environmental science", "adaptability"],
+    "Do you enjoy collaborating in a team?": ["teamwork"],
+    "Are you good at making decisions?": ["decision-making"],
+    "Do you manage your time effectively?": ["time management"],
+    "Do you enjoy leadership roles and leading others?": ["leadership"],
+    "Are you patient and empathetic?": ["empathy", "patience"],
+    "Do you have a creative mindset?": ["creativity"],
+    "Are you interested in legal studies or law-related topics?": ["law"],
+    "Do you enjoy physical activities and sports?": ["sport"],
+    "Are you interested in arts and culture?": ["arts", "culture"],
+    "Do you have a strong interest in technology and innovation?": ["technology"],
+    "Are you interested in healthcare and well-being?": ["healthcare"],
+    "Do you enjoy writing and communication?": ["writing"],
+    "Are you interested in fashion and design?": ["fashion"],
+    "Do you enjoy music, drama, or the performing arts?": ["music", "drama"],
+    "Are you interested in geography and tourism?": ["geography", "tourism"],
+    "Do you have an interest in energy and the environment?": ["energy", "environmental science"],
+    "Do you have a general interest in various subjects?": ["general studies"],
     }
 
 def ask_question(question, characteristics):
