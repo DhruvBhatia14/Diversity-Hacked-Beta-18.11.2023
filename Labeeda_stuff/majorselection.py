@@ -58,7 +58,6 @@ def major_select():
     # Check if user-selected subjects match majors' characteristics and update counters
     for major, subjects in list_of_majors.items():
         if any(subject in user_subjects for subject in map(str.lower, subjects)):
-            print(f"Your selected subjects match the characteristics of {major}.")
             counter[major] += 1
 
     # Ask the user a series of questions and update counters based on responses
