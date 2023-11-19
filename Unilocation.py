@@ -59,7 +59,7 @@ class Location:
         "University of Toronto": ['Toronto', 'Ontario', 'Canada'],
         "York University": ['Toronto', 'Ontario', 'Canada'],
         "Toronto Metropolitan University": ['Toronto', 'Ontario', 'Canada'],
-        "University of Ottawa": ['Ottawa', 'Ontario', 'Canada'],
+        "University of Ottawa-Université d'Ottawa": ['Ottawa', 'Ontario', 'Canada'],
         "Carleton University": ['Ottawa', 'Ontario', 'Canada'],
         "McMaster University": ['Hamilton', 'Ontario', 'Canada'],
         "University of Waterloo": ['Waterloo', 'Ontario', 'Canada'],
@@ -115,7 +115,7 @@ class Location:
         "St. Francis Xavier University", "NSCAD University",
 
         # Ontario
-        "University of Toronto", "University of Ottawa", "York University",
+        "University of Toronto", "University of Ottawa-Université d'Ottawa", "York University",
         "McMaster University", "University of Waterloo", "Western University",
         "Queen's University", "Carleton University", "Toronto Metropolitan University",
         "University of Guelph", "Brock University", "Wilfrid Laurier University",
