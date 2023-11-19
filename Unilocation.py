@@ -199,7 +199,6 @@ class Location:
                         print("We do not have that in our database right now, please consider a new city.")
             if z == "No":
                 flag = False
-        self.locpref.append("Canada")
         print(self.locpref)    
 
     def University_check(self):
