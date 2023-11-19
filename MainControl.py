@@ -61,7 +61,7 @@ def recursion():
             exit()
         while cost_dict == {}:
             print("No Universities fall within all your requirements")
-            cost_reconsider = input("Budget insufficient, whould you like to reconsider your budget? (Yes/No) ").lower()
+            cost_reconsider = input("Budget insufficient, whould you like to reconsider your budget?(Yes/No): ").lower()
             if cost_reconsider == "yes":
                 budget = float(input("How much are you willing to spend going to this University in total? ").strip("$").strip(",").strip("."))
                 cost_dict = cost_dict1.copy()
@@ -75,7 +75,7 @@ def recursion():
                     exit()
                     
             else:
-                check_again = input("Do you want to try to reconsider major or location, saying no will exit program? (yes/no):").lower()
+                check_again = input("Do you want to try to reconsider major or location, saying no will exit program?(yes/no): ").lower()
                 if check_again == 'yes':
                     # go to line 15 and enter the while loop
                     safe_Universities = []
